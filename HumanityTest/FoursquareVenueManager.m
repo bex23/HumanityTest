@@ -9,6 +9,8 @@
 #import "FoursquareVenueManager.h"
 #import <CoreLocation/CoreLocation.h>
 
+NSString * const kLocationManagerDidChangeAuthorizationStatus = @"kLocationManagerDidChangeAuthorizationStatus";
+
 @interface FoursquareVenueManager()<CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
@@ -30,9 +32,6 @@
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
-//    [self.locationManager stopUpdatingLocation];
-//    [self getVenuesForLocation:newLocation];
-//    [self setupMapForLocatoion:newLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -42,9 +41,8 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [manager startUpdatingLocation];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLocationManagerDidChangeAuthorizationStatus
+                                                        object:@(status)];
 }
 
 #pragma mark - singleton management
