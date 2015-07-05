@@ -1,4 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="facebook" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookUsername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formattedPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="contact" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crossStreet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="neighborhood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="location" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Tip" representedClassName="Tip" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="tips" inverseEntity="Venue" syncable="YES"/>
+    </entity>
+    <entity name="Venue" representedClassName="Venue" syncable="YES">
+        <attribute name="checkinsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="venue" inverseEntity="Contact" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="venue" inverseEntity="Location" syncable="YES"/>
+        <relationship name="tips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tip" inverseName="venue" inverseEntity="Tip" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Venue" positionX="-207" positionY="9" width="128" height="133"/>
+        <element name="Contact" positionX="142" positionY="-63" width="128" height="148"/>
+        <element name="Location" positionX="144" positionY="99" width="128" height="208"/>
+        <element name="Tip" positionX="0" positionY="360" width="128" height="118"/>
+    </elements>
 </model>

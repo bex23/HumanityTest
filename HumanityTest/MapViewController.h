@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MapViewController.h
 //  HumanityTest
 //
 //  Created by Dejan Bekic on 7/4/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MapViewController : UIViewController
 
 @end
-
