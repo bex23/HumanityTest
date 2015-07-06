@@ -81,4 +81,15 @@ NSString *const kStatsCheckinsCount = @"checkinsCount";
     }
 }
 
+#pragma mark - fetch
+
++ (NSArray *) allVenuesInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"checkinsCount"
+                                                                 ascending:NO];
+    [request setSortDescriptors:@[descriptor]];
+    NSArray *results = [managedObjectContext executeFetchRequest:request error:nil];
+    return results;
+}
+
 @end

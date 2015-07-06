@@ -27,4 +27,6 @@ extern NSString * const kLocationManagerDidChangeAuthorizationStatus;
 @property (strong, nonatomic, readonly) CLLocationManager *locationManager;
 @property (weak, nonatomic) id<FoursquareVenueManagerDelegate> delegate;
 
+- (NSArray *) allVenues;
+
 @end

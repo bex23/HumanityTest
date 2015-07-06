@@ -11,4 +11,6 @@
 
 @interface Venue (HumanityTest)<ParsingSupport>
 
++ (NSArray *) allVenuesInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 @end

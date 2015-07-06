@@ -17,5 +17,6 @@
                   atRadius:(NSNumber *)radius
                    success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                    failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (void) startMonitoringReachability;
 
 @end

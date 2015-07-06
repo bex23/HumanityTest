@@ -15,6 +15,8 @@
 		6CD904701B499D060058D6F8 /* Location+HumanityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD9046F1B499D060058D6F8 /* Location+HumanityTest.m */; };
 		6CD904731B49A1110058D6F8 /* Venue+HumanityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD904721B49A1110058D6F8 /* Venue+HumanityTest.m */; };
 		6CD904771B49C4910058D6F8 /* LocationAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD904761B49C4910058D6F8 /* LocationAccessViewController.m */; };
+		6CD9047C1B4A6C7A0058D6F8 /* VenueAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD9047B1B4A6C7A0058D6F8 /* VenueAnnotation.m */; };
+		6CD904841B4AA2BD0058D6F8 /* VenuesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD904831B4AA2BD0058D6F8 /* VenuesListTableViewController.m */; };
 		6CE3EBB31B48170100E492C7 /* SF-UI-Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE3EBAE1B48170100E492C7 /* SF-UI-Display-Bold.ttf */; };
 		6CE3EBB41B48170100E492C7 /* SF-UI-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE3EBAF1B48170100E492C7 /* SF-UI-Display-Regular.ttf */; };
 		6CE3EBB51B48170100E492C7 /* SF-UI-Display-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CE3EBB01B48170100E492C7 /* SF-UI-Display-Semibold.ttf */; };
@@ -29,6 +31,7 @@
 		6CE3EBFA1B4972FD00E492C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3EBF91B4972FD00E492C7 /* Location.m */; };
 		6CE3EBFD1B4972FD00E492C7 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3EBFC1B4972FD00E492C7 /* Tip.m */; };
 		6CE3EC001B4972FE00E492C7 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3EBFF1B4972FE00E492C7 /* Venue.m */; };
+		6CE4C3061B4AAC4B00986C16 /* VenueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4C3051B4AAC4B00986C16 /* VenueTableViewCell.m */; };
 		6CEAFBC71B480B960095AFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAFBC61B480B960095AFE4 /* main.m */; };
 		6CEAFBCA1B480B960095AFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAFBC91B480B960095AFE4 /* AppDelegate.m */; };
 		6CEAFBCD1B480B960095AFE4 /* HumanityTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAFBCB1B480B960095AFE4 /* HumanityTest.xcdatamodeld */; };
@@ -66,6 +69,10 @@
 		6CD904721B49A1110058D6F8 /* Venue+HumanityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Venue+HumanityTest.m"; sourceTree = "<group>"; };
 		6CD904751B49C4910058D6F8 /* LocationAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAccessViewController.h; sourceTree = "<group>"; };
 		6CD904761B49C4910058D6F8 /* LocationAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAccessViewController.m; sourceTree = "<group>"; };
+		6CD9047A1B4A6C7A0058D6F8 /* VenueAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueAnnotation.h; sourceTree = "<group>"; };
+		6CD9047B1B4A6C7A0058D6F8 /* VenueAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueAnnotation.m; sourceTree = "<group>"; };
+		6CD904821B4AA2BD0058D6F8 /* VenuesListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesListTableViewController.h; sourceTree = "<group>"; };
+		6CD904831B4AA2BD0058D6F8 /* VenuesListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesListTableViewController.m; sourceTree = "<group>"; };
 		6CE3EBAE1B48170100E492C7 /* SF-UI-Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.ttf"; sourceTree = "<group>"; };
 		6CE3EBAF1B48170100E492C7 /* SF-UI-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.ttf"; sourceTree = "<group>"; };
 		6CE3EBB01B48170100E492C7 /* SF-UI-Display-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.ttf"; sourceTree = "<group>"; };
@@ -87,6 +94,8 @@
 		6CE3EBFC1B4972FD00E492C7 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
 		6CE3EBFE1B4972FE00E492C7 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		6CE3EBFF1B4972FE00E492C7 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		6CE4C3041B4AAC4B00986C16 /* VenueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewCell.h; sourceTree = "<group>"; };
+		6CE4C3051B4AAC4B00986C16 /* VenueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewCell.m; sourceTree = "<group>"; };
 		6CEAFBC11B480B960095AFE4 /* HumanityTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanityTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEAFBC51B480B960095AFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CEAFBC61B480B960095AFE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +159,17 @@
 			name = LocationAccess;
 			sourceTree = "<group>";
 		};
+		6CD9047F1B4AA2910058D6F8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6CD904821B4AA2BD0058D6F8 /* VenuesListTableViewController.h */,
+				6CD904831B4AA2BD0058D6F8 /* VenuesListTableViewController.m */,
+				6CE4C3041B4AAC4B00986C16 /* VenueTableViewCell.h */,
+				6CE4C3051B4AAC4B00986C16 /* VenueTableViewCell.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		6CE3EBA21B4816C600E492C7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +193,7 @@
 		6CE3EBB81B481FCF00E492C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CD9047F1B4AA2910058D6F8 /* List */,
 				6CD904741B49C46E0058D6F8 /* LocationAccess */,
 				6CE3EBB91B481FD600E492C7 /* Map */,
 			);
@@ -184,6 +205,8 @@
 			children = (
 				6CE3EBBA1B48233F00E492C7 /* MapViewController.h */,
 				6CE3EBBB1B48233F00E492C7 /* MapViewController.m */,
+				6CD9047A1B4A6C7A0058D6F8 /* VenueAnnotation.h */,
+				6CD9047B1B4A6C7A0058D6F8 /* VenueAnnotation.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -453,9 +476,11 @@
 				6CD904771B49C4910058D6F8 /* LocationAccessViewController.m in Sources */,
 				6CE3EBE21B496F1D00E492C7 /* Tip+HumanityTest.m in Sources */,
 				6CEAFBCA1B480B960095AFE4 /* AppDelegate.m in Sources */,
+				6CD904841B4AA2BD0058D6F8 /* VenuesListTableViewController.m in Sources */,
 				6CD904651B497DE40058D6F8 /* Contact+HumanityTest.m in Sources */,
 				6CD9046C1B498C1B0058D6F8 /* APIManager.m in Sources */,
 				6CE3EBC41B48B31B00E492C7 /* FoursquareVenueManager.m in Sources */,
+				6CD9047C1B4A6C7A0058D6F8 /* VenueAnnotation.m in Sources */,
 				6CD904621B497A140058D6F8 /* NSObject+ParsingSupport.m in Sources */,
 				6CEAFBCD1B480B960095AFE4 /* HumanityTest.xcdatamodeld in Sources */,
 				6CEAFBC71B480B960095AFE4 /* main.m in Sources */,
@@ -463,6 +488,7 @@
 				6CE3EBBC1B48233F00E492C7 /* MapViewController.m in Sources */,
 				6CD904731B49A1110058D6F8 /* Venue+HumanityTest.m in Sources */,
 				6CE3EC001B4972FE00E492C7 /* Venue.m in Sources */,
+				6CE4C3061B4AAC4B00986C16 /* VenueTableViewCell.m in Sources */,
 				6CD904611B497A140058D6F8 /* NSArray+ParsingSupport.m in Sources */,
 				6CE3EBF71B4972FD00E492C7 /* Contact.m in Sources */,
 			);

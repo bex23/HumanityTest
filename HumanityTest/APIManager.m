@@ -32,19 +32,27 @@ NSString *const CATEGORY_ID = @"4bf58dd8d48988d116941735";
                   atRadius:(NSNumber *)radius
                    success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                    failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    NSDictionary *parameters = @{@"client_id" : FOURSQUARE_CLIENT_ID,
-                                 @"client_secret" : FOURSQUARE_CLIENT_SECRET,
-                                 @"v" : FOURSQUARE_API_VERSION,
-                                 @"categoryId" : CATEGORY_ID, //get only bars
-                                 @"radius" : radius,
-                                 @"ll" : [NSString stringWithFormat:@"%f, %f", location.coordinate.latitude, location.coordinate.longitude]};
-    [self GET:@"venues/explore" parameters:parameters
-      success:^(NSURLSessionDataTask *task, id responseObject) {
-          success(task, responseObject);
-      }
-      failure:^(NSURLSessionDataTask *task, NSError *error) {
-          failure(task, error);
-      }];
+    if ([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] != AFNetworkReachabilityStatusNotReachable) {
+        NSDictionary *parameters = @{@"client_id" : FOURSQUARE_CLIENT_ID,
+                                     @"client_secret" : FOURSQUARE_CLIENT_SECRET,
+                                     @"v" : FOURSQUARE_API_VERSION,
+                                     @"categoryId" : CATEGORY_ID, //get only bars
+                                     @"radius" : radius,
+                                     @"ll" : [NSString stringWithFormat:@"%f, %f", location.coordinate.latitude, location.coordinate.longitude]};
+        [self GET:@"venues/explore" parameters:parameters
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              success(task, responseObject);
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              failure(task, error);
+          }];
+    } else  {
+        failure(nil, nil);
+    }
+}
+
+- (void) startMonitoringReachability {
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 @end

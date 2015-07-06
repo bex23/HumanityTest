@@ -50,7 +50,7 @@ const double kRadius = 500.0;
 #pragma mark - core location manager delegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    if ([self.delegate respondsToSelector:@selector(didUpdateToLocation:)]) {
+    if ([self.delegate respondsToSelector:@selector(didUpdateToLocation:)] && !self.lastFetchedLocation) {
         [self.delegate didUpdateToLocation:[locations lastObject]];
     }
     if (!self.lastFetchedLocation || ([self.lastFetchedLocation distanceFromLocation:[locations lastObject]] > kRadius/2)) {
@@ -98,6 +98,10 @@ const double kRadius = 500.0;
                                }];
 }
 
+- (NSArray *) allVenues {
+    return [Venue allVenuesInManagedObjectContext:self.managedObjectContext];
+}
+
 #pragma mark - singleton management
 
 static FoursquareVenueManager *sharedManager;
@@ -110,6 +114,7 @@ static FoursquareVenueManager *sharedManager;
     {
         if (!sharedManager){
             sharedManager = [[FoursquareVenueManager alloc] init];
+            [sharedManager.apiManager startMonitoringReachability];
         }
         return sharedManager;
     }
