@@ -93,6 +93,9 @@ const double kRadius = 500.0;
                                    }
                                }
                                failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                   if (error == nil) {
+                                       NSLog(@"Network not reachable");
+                                   }
                                    NSLog(@"%@", error);
                                    self.lastFetchedLocation = nil;
                                }];
