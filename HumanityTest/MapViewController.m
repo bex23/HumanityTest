@@ -13,7 +13,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LocationAccessViewController.h"
 
-@interface MapViewController ()<LocationAccessDelegate>
+@interface MapViewController ()<LocationAccessDelegate, FoursquareVenueManagerDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
 @implementation MapViewController
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[FoursquareVenueManager sharedManager] setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,14 +41,35 @@
             [self presentViewController:lavc animated:YES completion:nil];
         });
     } else {
-#warning  start updating location
+        [[[FoursquareVenueManager sharedManager] locationManager] startUpdatingLocation];
+        [self.mapView setShowsUserLocation:YES];
     }
 }
 
 #pragma mark - location access delegate
 
 - (void) didGrantAccessToLocation {
+    [self.mapView setShowsUserLocation:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - foursquare venue manager delegate
+
+- (void) didUpdateToLocation:(CLLocation *)location {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.003;
+    span.longitudeDelta = 0.003;
+    CLLocationCoordinate2D newLocation;
+    newLocation.latitude = location.coordinate.latitude;
+    newLocation.longitude = location.coordinate.longitude;
+    region.span = span;
+    region.center = newLocation;
+    [self.mapView setRegion:region animated:YES];
+}
+
+- (void) didUpdateVenues {
+    
 }
 
 @end

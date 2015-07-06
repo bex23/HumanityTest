@@ -14,6 +14,8 @@
 
 - (instancetype)init;
 - (void) getBarsAtLocation:(CLLocation *)location
-                  atRadius:(NSNumber *)radius;
+                  atRadius:(NSNumber *)radius
+                   success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end

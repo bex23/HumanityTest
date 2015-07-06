@@ -12,7 +12,6 @@
 
 @interface LocationAccessViewController ()
 @property (weak, nonatomic) IBOutlet UIView *accessView;
-@property (weak, nonatomic) IBOutlet UIView *openSettingsView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
